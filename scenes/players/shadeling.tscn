@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://ydrv6r7e1mrl"]
+
+[ext_resource type="PackedScene" uid="uid://3jcr2k6te8wk" path="res://scenes/players/player.tscn" id="1_j646f"]
+[ext_resource type="Script" uid="uid://do327op6dbw4o" path="res://scenes/players/Player.gd" id="2_cr7ic"]
+[ext_resource type="Texture2D" uid="uid://b4we8rhp3o3db" path="res://sprites/shadeling.png" id="2_q4x01"]
+[ext_resource type="Texture2D" uid="uid://dqycmr145votb" path="res://sprites/shadeling_idle2.png" id="3_cr7ic"]
+[ext_resource type="Texture2D" uid="uid://cce5t8t85o0h" path="res://sprites/shadeling_walk2.png" id="4_ofqbr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blajm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q4x01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cr7ic")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q4x01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ofqbr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cr7ic"]
+radius = 7.0
+
+[node name="Shadeling" instance=ExtResource("1_j646f")]
+script = ExtResource("2_cr7ic")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_blajm")
+animation = &"walk"
+frame_progress = 0.874769
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_cr7ic")

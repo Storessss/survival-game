@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd12weqxmbteh"]
+
+[ext_resource type="Texture2D" uid="uid://claa5s03cy307" path="res://sprites/tileset.png" id="1_plsvb"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xqv4l"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1pxo6"]
+texture = ExtResource("1_plsvb")
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_xqv4l")
+
+[sub_resource type="TileSet" id="TileSet_d1aog"]
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_1pxo6")
+
+[node name="Tilemap" type="TileMapLayer"]
+tile_set = SubResource("TileSet_d1aog")

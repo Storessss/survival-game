@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64721iqg10os"]
+
+[ext_resource type="Script" uid="uid://bgb0rktbi3v3x" path="res://scenes/game/hud.gd" id="1_kqgwg"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_kqgwg")
+
+[node name="Wood" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "Wood: 0"
